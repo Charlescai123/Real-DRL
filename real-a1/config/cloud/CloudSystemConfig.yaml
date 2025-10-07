@@ -1,0 +1,70 @@
+JobParams:
+  gpu: true
+  job_name: 'Cloud-Edge'
+  run_mode: train
+  seed: 1
+  capture_video: false
+  output_path: ''
+  experiment_name: quadruped robot
+CloudParams:
+  sleep_after_reset: 2
+  pre_fill_steps: 0
+  weights_update_period: 1
+  artificial_bandwidth: -1
+  artificial_ping: 0.0
+  ethernet_bandwidth: 100
+  ethernet_ping: 0.2
+AgentParams:
+  agent_name: DDPG
+  mode: train
+  action_noise: 'no'
+  action_noise_factor: 1.0
+  action_noise_half_decay_time: 1000000.0
+  soft_alpha: 0.005
+  learning_rate_actor: 0.0003
+  learning_rate_critic: 0.0003
+  batch_size: 128
+  gamma_discount: 0.99
+  model_path: ''
+  total_training_steps: 800000
+  replay_buffer_size: 800000
+  learning_starts: 500
+  iterations_per_step: 1
+  max_episode_steps: 4000
+  eval_period: 20
+RedisParams:
+  servers:
+    port: '6379'
+    password: ippc123456
+    host_ip: 10.162.12.223
+    name: cloud
+  ch_edge_control:
+    server_name: cloud
+    channel_name: ch_plant_control
+  ch_plant_trajectory_segment:
+    server_name: cloud
+    channel_name: ch_plant_trajectory_segment
+  ch_edge_weights:
+    server_name: cloud
+    channel_name: ch_edge_weights
+  ch_edge_ready_update:
+    server_name: cloud
+    channel_name: ch_edge_ready_update
+  ch_plant_reset:
+    server_name: cloud
+    channel_name: ch_plant_reset
+  ch_edge_mode:
+    server_name: cloud
+    channel_name: ch_edge_mode
+  ch_edge_trajectory:
+    server_name: cloud
+    channel_name: ch_edge_trajectory
+  ch_training_steps:
+    server_name: cloud
+    channel_name: ch_training_steps
+  ch_edge_patch_update:
+    server_name: cloud
+    channel_name: ch_edge_patch_update
+  ch_edge_patch_gain:
+    server_name: cloud
+    channel_name: ch_edge_patch_gain

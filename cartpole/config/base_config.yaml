@@ -1,0 +1,46 @@
+general:
+  id: 'Real-DRL'
+  mode: 'train'
+  checkpoint: null
+  use_gpu: true
+  gpu_id: 0
+  seed: 0
+  test_dual_buffer: false     # Validate dual buffer settings
+  friction_cart_change:      # Settings for changing cart friction
+    episode_round: 10
+    friction: 40
+
+  # Training
+  training_by_steps: true         # Terminate training by maximum steps or episodes
+  max_training_steps: 4e5         # (1e6 by default)
+  max_training_episodes: 1e6      # (1e3 by default)
+  max_steps_per_episode: 1e3      # (1500 by default)
+
+  # Evaluation
+  evaluation_period: 20           # (20 by default)
+  max_evaluation_steps: 1000       # (same to max_steps_per_episode by default)
+
+  # Logging
+  logging:
+    mode: null   # null or other (DEBUG/INFO/WARNING...)
+    folder: 'results/logs/debug'
+
+
+defaults:
+  - envs: cartpole.yaml
+  - trigger: trigger.yaml
+  - phy_teacher: phy_teacher.yaml
+  - drl_student: phydrl.yaml
+  - logger: logger.yaml
+  - _self_
+
+hydra:
+  run:
+    dir: "results/hydra/${now:%Y-%m-%d}/${now:%H-%M-%S}"
+  sweep:
+    dir: "results/hydra/${now:%Y-%m-%d}/${now:%H-%M-%S}"
+    subdir: "${hydra.job.num}_${hydra.job.id}"
+#  hydra_logging:
+#    root:
+#      # Set resolve to True to enable variable interpolation
+#      resolve: true

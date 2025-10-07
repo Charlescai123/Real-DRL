@@ -1,0 +1,205 @@
+# @package _global_
+
+cartpole:
+  # State constraint
+  safety_set:
+    x: [ -1.5, 1.5 ]
+    x_dot: [ -2, 2 ]
+    theta: [ -1, 1 ]
+    theta_dot: [ -2, 2 ]
+
+  # Action constraint
+  force_bound: [ -50, 50 ]
+
+  # Cart-pole (Physical model parameters)
+  mass_cart: 0.94
+  mass_pole: 0.23
+  length_pole: 0.64
+  friction_cart: 18
+  friction_pole: 0.0031
+#  friction_pole: 0.06
+  gravity: 9.8    # gravitational acceleration
+  frequency: 50   # Runtime frequency
+  with_friction: true
+  kinematics_integrator: "euler"
+  terminate_on_failure: true
+
+  # Unsafe initial condition for testing
+  initial_condition: [
+    0.3618298350176420,
+    0.055707845883927,
+    -0.3568100254495141,
+    0.09013432339178134,
+    false
+  ]
+
+  ########################### Used for figures #########################
+#  initial_condition: [
+#    -0.2561692115937687,
+#    0.085707845883927,
+#    -0.2134108601854805354,
+#    0.05013432339178134,
+#    false
+#  ]
+
+#  initial_condition: [
+#    0.2561692115937687,
+#    0.085707845883927,
+#    -0.2134108601854805354,
+#    0.05013432339178134,
+#    false
+#  ]
+
+#  initial_condition: [
+#    0.2561692115937687,
+#    0.085707845883927,
+#    0.2134108601854805354,
+#    0.05013432339178134,
+#    false
+#  ]
+
+#  initial_condition: [
+#    -0.2561692115937687,
+#    0.085707845883927,
+#    0.2134108601854805354,
+#    0.05013432339178134,
+#    false
+#  ]
+
+#  initial_condition: [
+#    -0.3881692115937687,
+#    0.085707845883927,
+#    -0.2234108601854805354,
+#    0.05013432339178134,
+#    false
+#  ]
+
+########################### Ablation study ##################################
+
+  # Unsafe initial condition 1
+#  initial_condition: [
+#    -0.1518298350176420,
+#    0.005707845883927,
+#    -0.2068100254495141,
+#    0.05013432339178134,
+#    false
+#  ]
+
+#   Unsafe initial condition 2
+#  initial_condition: [
+#    0.2939715405149151,
+#    0.025707845883927,
+#    -0.3098023849983896,
+#    0.15013432339178134,
+#    false
+#  ]
+
+  # Unsafe initial condition 3
+#  initial_condition: [
+#    0.4172989976094086,
+#    0.050707845883927,
+#    0.2485423578386735,
+#    0.09213432339178134,
+#    false
+#  ]
+
+  # Unsafe initial condition 4
+#  initial_condition: [
+#    -0.3899750175043573,
+#    0.050707845883927,
+#    0.3513748143538569,
+#    0.09213432339178134,
+#    false
+#  ]
+
+  # Unsafe initial condition 5
+#  initial_condition: [
+#    0.2010988094215409,
+#    0.050707845883927,
+#    0.3282549869118268,
+#    0.09213432339178134,
+#    false
+#  ]
+
+  set_point: [
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ]
+  # Random Reset
+  random_reset:
+    threshold: 1
+    train: true
+    eval: true
+
+  # Domain Randomization
+  domain_random:
+    # mass of cart
+    mass_cart:
+      apply: false
+      distribution:
+        type: "gaussian"
+        mean: 0
+        stddev: 2
+
+    # mass of pole
+    mass_pole:
+      apply: false
+      distribution:
+        type: "gaussian"
+        mean: 0
+        stddev: 2
+
+    # friction of cart
+    friction_cart:
+      apply: false
+      distribution:
+#        type: "uniform"
+#        lb: -2
+#        ub: 2
+        type: "gaussian"
+        mean: 0
+        stddev: 1
+
+    # friction of pole
+    friction_pole:
+      apply: false
+      distribution:
+        type: "gaussian"
+        mean: 0
+        stddev: 2
+
+    # actuator
+    actuator:
+      apply: false
+      distribution:
+        type: "gaussian"
+        mean: 0
+        stddev: 2
+
+  # Inject disturbance to actuator
+  inject_disturbance:
+    actuator:
+      apply: false
+      distribution:
+        type: "gaussian"
+        mean: 0
+        stddev: 2
+#        type: "constant"
+#        value: 5
+
+  # RL Reward from Envs
+  rewards:
+    # High-performance reward
+#    teacher_discount: 0.5
+#    distance: 0.5
+    action: 0.015
+#    crash: 0.0
+
+    # Safety-embedded reward
+    lyapunov: 2.5
+#    phydrl: 0.0
+
+
+

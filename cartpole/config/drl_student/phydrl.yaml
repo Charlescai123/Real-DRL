@@ -1,0 +1,11 @@
+# @package drl_student
+defaults:
+  - agents: ddpg.yaml
+  - networks: taylor.yaml
+  - _self_
+
+phydrl:
+  use_dual_replay_buffer: false
+  gamma: 0.5   # Contribution ration between data-driven (1.0) and model-based action (0.0)
+
+

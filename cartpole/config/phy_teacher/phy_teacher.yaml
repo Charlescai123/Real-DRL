@@ -1,0 +1,26 @@
+# @package _global_
+
+phy_teacher:
+  chi: 0.1
+  tau: ${trigger.tau}
+  epsilon: 1
+
+  trigger_type: ${trigger.trigger_type}
+  teacher_enable: true    # enable PHY-Teacher or not
+  teacher_correct: true    # whether PHY-Teacher's actions are used for correcting DRL-Student
+  force_compensation: true  # Used for compensation
+
+  # Learning space
+  learning_space:
+    x: [-0.6, 0.6]
+    x_dot: [-0.7, 0.7]
+    theta: [-0.6, 0.6]
+    theta_dot: [-0.7, 0.7]
+
+  matlab_engine:
+    stdout: false
+    stderr: false
+    working_path: "src/phy_teacher/matlab/"
+    cvx_toolbox:
+      setup: false
+      relative_path: "./cvx"

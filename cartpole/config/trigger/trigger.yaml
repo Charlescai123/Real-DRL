@@ -1,0 +1,6 @@
+# @package _global_
+
+trigger:
+  trigger_type: 1       # 0 -> self-trigger | 1 -> event-trigger
+  tau: 10
+
