@@ -6,7 +6,9 @@
 ![Python](https://img.shields.io/badge/Python-3.8+-blue?logo=python)
 ![Linux](https://img.shields.io/badge/Linux-22.04-yellow?logo=linux)
 
-This repo provides an implementation of the [Real-DRL](https://charlescai123.github.io/real-drl-website/) framework, with three different experiments:
+The [Real-DRL](https://charlescai123.github.io/real-drl-website/) framework is designed for safety-critical autonomous systems, enabling **runtime learning** of a deep reinforcement learning (DRL) agent to develop safe and high-performance action policies in real plants (i.e., real physical systems to be controlled), while prioritizing safety. 
+
+This repo provides an implementation of the Real-DRL framework, with three different experiments:
 
 * [Cart-Pole](./cartpole/): Cartpole System in Openai Gym
 * [Real-A1](./real-a1): A1 Robot in Real-world Environment
