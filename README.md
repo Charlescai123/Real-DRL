@@ -1,4 +1,4 @@
-# NeurIPS 2025: Real-DRL
+# NeurIPS 2025 - Real-DRL: Teach and Learn in Reality
 
 ![PyTorch](https://img.shields.io/badge/PyTorch-3.2.6-red?logo=pytorch)
 ![Tensorflow](https://img.shields.io/badge/Tensorflow-2.11.0-orange?logo=tensorflow)
@@ -8,7 +8,7 @@
 
 ---
 
-This repo implements the **Real-DRL** for three different experiments:
+This repo implements the [Real-DRL](https://charlescai123.github.io/real-drl-website/) framework with three different experiments:
 
 * [Cart-Pole](./cartpole/): Cartpole System in Openai Gym
 * [Real-A1](./real-a1): A1 Robot in Real-world Environment
