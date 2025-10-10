@@ -6,8 +6,6 @@
 ![Python](https://img.shields.io/badge/Python-3.8+-blue?logo=python)
 ![Linux](https://img.shields.io/badge/Linux-22.04-yellow?logo=linux)
 
----
-
 This repo implements the [Real-DRL](https://charlescai123.github.io/real-drl-website/) framework with three different experiments:
 
 * [Cart-Pole](./cartpole/): Cartpole System in Openai Gym
