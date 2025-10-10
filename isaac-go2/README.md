@@ -78,8 +78,6 @@ cd extern/rsl_rl && pip install -e .
 
 ## Runtime Learning in the Wild
 
----
-
 [//]: # (<p align="center">)
 [//]: # ( <img src="./docs/scene.png" alt="rlm"/> )
 
@@ -112,8 +110,6 @@ handling unforeseen incidents arising from unknown environments.
 
 #### 1️⃣ Safety Assurance (Runtime Learning)
 
----
-
 A key objective of this framework is to ensure the robot's safety during runtime learning, achieved through a
 hybrid control system with a switching mechanism design:
 
@@ -126,8 +122,6 @@ hybrid control system with a switching mechanism design:
 | <img src="./docs/with-rlm.gif" height="245" alt="rlm"/> | <img src="./docs/wo-rlm.gif" height="245" alt="rlm"/> |
 
 #### ️2️⃣ **Compare with Other Model-based Controller**
-
----
 
 PHY-Teacher is a real-time, physics-based safety controller utilizing a dynamic model (**Real-Time Patch**), holding
 superior performance compared to safety controllers that rely on time-invariant (e.g., **Fixed**) models. The comparison
