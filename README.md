@@ -10,9 +10,9 @@
 
 This repo implements the **Real-DRL** for three different experiments:
 
-* [Cart-Pole](./cartpole/) in Openai Gym
-* [Quadruped-A1](./quadruped-a1/) in Real-world Environment
-* [Quadruped-Go2](./quadruped-go2/) in Nvidia IsaacGym
+* [Cart-Pole](./cartpole/): Cartpole System in Openai Gym
+* [Real-A1](./real-a1): A1 Robot in Real-world Environment
+* [Isaac-Go2](./isaac-go2/): Go2 Robot in Nvidia IsaacGym
 
 <p align="center">
  <img src="./docs/framework.png" height="460" alt="scene"/> 
