@@ -6,7 +6,6 @@
 ![Python](https://img.shields.io/badge/Python-3.8+-blue?logo=python)
 ![Linux](https://img.shields.io/badge/Linux-22.04-yellow?logo=linux)
 
----
 
 This repo implements the **Real-DRL** on the Unitree-Go2 robot for the wild environments in Nivida IsaacGym. In this framework, a closed-loop system is established for the quadruped robot by incorporating the *Sensing*, *Navigation/Planning* and *Locomotion Control* module.
 <p align="center">
@@ -100,9 +99,6 @@ python -m src.scripts.play --use_gpu=True --show_gui=True --num_envs=1
 | <img src="./docs/nav.gif" alt="rlm"/> | <img src="./docs/nav_rgb.gif"  alt="rlm"/> | <img src="./docs/nav_depth.gif" alt="rlm"/> |
 
 ### 🦿 Locomotion
-
----
-
 
 The locomotion control module provides real-time response in safety-critical systems, effectively
 handling unforeseen incidents arising from unknown environments.
