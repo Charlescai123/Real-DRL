@@ -8,9 +8,7 @@
 
 ---
 
-This repo implements the **Runtime Learning Framework** on the Unitree-Go2 robot for the wild environments in Nivida
-IsaacGym. In this framework, a closed-loop system is established for the quadruped robot by incorporating the *Sensing*,
-*Navigation/Planning* and *Locomotion Control* module.
+This repo implements the **Real-DRL** on the Unitree-Go2 robot for the wild environments in Nivida IsaacGym. In this framework, a closed-loop system is established for the quadruped robot by incorporating the *Sensing*, *Navigation/Planning* and *Locomotion Control* module.
 <p align="center">
  <img src="./docs/navigation.png" height="460" alt="scene"/> 
  <br><b>Fig 1. Runtime Learning Framework -- A Close-loop System for the Quadruped Robot</b>
@@ -119,9 +117,9 @@ handling unforeseen incidents arising from unknown environments.
 A key objective of this framework is to ensure the robot's safety during runtime learning, achieved through a
 hybrid control system with a switching mechanism design:
 
-🔹 when the robot base turns **Blue** ➡️ robot is controlled by **HP-Student**.
+🔹 when the robot base turns **Blue** ➡️ robot is controlled by **DRL-Student**.
 
-🔺 when the robot base turns **Red** ➡️ robot is controller by **HA-Teacher**.
+🔺 when the robot base turns **Red** ➡️ robot is controller by **PHY-Teacher**.
 
 | With Runtime-Learning Framework                         | Without the Framework                                 |
    |---------------------------------------------------------|-------------------------------------------------------|
@@ -131,7 +129,7 @@ hybrid control system with a switching mechanism design:
 
 ---
 
-HA-Teacher is a real-time, physics-based safety controller utilizing a dynamic model (**Real-Time Patch**), holding
+PHY-Teacher is a real-time, physics-based safety controller utilizing a dynamic model (**Real-Time Patch**), holding
 superior performance compared to safety controllers that rely on time-invariant (e.g., **Fixed**) models. The comparison
 on wild, uneven terrain is demonstrated:
 
@@ -140,37 +138,6 @@ on wild, uneven terrain is demonstrated:
 | <img src="./docs/rlm_go2_push.gif" height="245" alt="rlm"/> | <img src="./docs/fixed_model.gif" height="245" alt="rlm"/> |
 
 
-## ⏳ To Do ##
-
-<!-- * [x] Add BEV map to the repo -->
-<!-- * [x] Fast Marching Method (FMM) implementation -->
-
-* [ ] Code Refactorization
-* [ ] Incorporate more challenging scenarios
-    * [x] Dense forests (sandy terrain, trees)
-    * [ ] inclined staircases, and rainy conditions
-* [ ] Go2 real robot deployment
-    * [ ] Gazebo real-time testing
-    * [ ] ROS/ROS2 integration
-* [ ] Restructure the code as FSM and add teleoperation (optional)
-* [ ] Migration to Isaac-Lab
-
----
-
 ## 🏷️ Misc
 
----
-
 - In order to plot the latest saved trajectory, run command `python -m src.utils.plot_trajectory`
-
----
-
-
-## 🎉 Acknowledgments
-
-Special thanks to the contributions from these repos:
-
-- [rsl\_rl](https://github.com/leggedrobotics/rsl_rl.git): Template for standard Reinforcement Learning algorithms.
-- [legged\_gym](https://github.com/leggedrobotics/legged_gym): Collection of simulation environments for legged robots.
-- [cajun](https://github.com/yxyang/cajun): Some baseline code for model-based control of legged robots.
-- [navigation-locomotion](https://github.com/MarkFzp/navigation-locomotion): Fast-Marching-Method and Motion Planning
