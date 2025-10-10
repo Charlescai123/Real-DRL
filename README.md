@@ -20,7 +20,7 @@ This repo implements the **Real-DRL** for three different experiments:
 </p>
 
 <p align="center">
- <img src="./docs/overview.png" height="460" alt="scene"/> 
+ <img src="./docs/safety-informed-bs.png" height="460" alt="scene"/> 
  <br><b>Fig 2. Safety-informed Batch Sampling</b>
 </p>
 
