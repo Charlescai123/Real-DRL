@@ -25,7 +25,7 @@ This repo provides an implementation of the Real-DRL framework, with three diffe
 </p>
 
 > [!TIP]
-> To enable real-world deployment, a conic optimization tool, [ecvxcone](https://github.com/Charlescai123/ecvxcone), has been developed to reduce the computational overhead of the LMI (Linear Matrix Inequality) solver. This toolbox supports real-time LMI solving on resource-constrained platforms such as embedded systems.
+> To enable real-world deployment, a conic optimization tool --[ecvxcone](https://github.com/Charlescai123/ecvxcone), has been developed to reduce the computational overhead of the LMI (Linear Matrix Inequality) solver. This toolbox supports real-time LMI solving on resource-constrained platforms such as embedded systems.
 
 ## 📝 Citation
 
